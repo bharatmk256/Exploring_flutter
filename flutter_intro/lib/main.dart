@@ -62,7 +62,9 @@ class MyApp extends StatelessWidget {
                   value: false,
                   onChanged: (bool value) {},
                 ),
-                new Image.network('http://thecatapi.com/api/images/get?formet=src&type=gif'),
+                new Image.network(
+                  'http://thecatapi.com/api/images/get?formet=src&type=gif',
+                ),
               ],
             ),
           )),
