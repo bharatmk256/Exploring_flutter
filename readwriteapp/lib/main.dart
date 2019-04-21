@@ -19,9 +19,77 @@ class Home extends StatefulWidget {
 }
 
 class _HomeState extends State<Home> {
+  var _enterDataField = new TextEditingController();
+
   @override
   Widget build(BuildContext context) {
-    return Container();
+    return Scaffold(
+      appBar: new AppBar(
+        title: new Text("Read Write"),
+        centerTitle: true,
+        backgroundColor: Colors.greenAccent,
+      ),
+      body: new Container(
+        padding: const EdgeInsets.all(13.4),
+        alignment: Alignment.topCenter,
+        child: new ListTile(
+          title: new TextField(
+            controller: _enterDataField,
+            decoration: new InputDecoration(
+              labelText: "Write Something",
+            ),
+          ),
+          subtitle: new RaisedButton(
+            onPressed: () {
+              // save to file
+              writeData(_enterDataField.text);
+            },
+            child: new Column(
+              children: <Widget>[
+                new Text("Save Data"),
+                new Padding(
+                  padding: new EdgeInsets.all(14.5),
+                ),
+                new Text("Saved data goes here"),
+              ],
+            ),
+          ),
+        ),
+      ),
+    );
+
+    //   body: new Container(
+    //     child: new Column(
+    //       children: <Widget>[
+    //         new Expanded(
+    //           child: new TextField(
+    //             controller: _enterDataField,
+    //             decoration: new InputDecoration(
+    //               labelText: "Write Something",
+    //             ),
+    //           ),
+    //         ),
+    //         new Expanded(
+    //           child: new RaisedButton(
+    //             onPressed: () {
+    //               // save to file
+    //               writeData(_enterDataField.text);
+    //             },
+    //             child: new Row(
+    //               children: <Widget>[
+    //                 new Text("Save Data"),
+    //                 new Padding(
+    //                   padding: new EdgeInsets.all(14.5),
+    //                 ),
+    //                 new Text("Saved data goes here"),
+    //               ],
+    //             ),
+    //           ),
+    //         ),
+    //       ],
+    //     ),
+    //   ),
+    // );
   }
 
   Future<String> get _localPath async {
