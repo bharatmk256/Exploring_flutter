@@ -10,13 +10,13 @@ void main() => runApp(MyApp());
 
 class MyApp extends StatelessWidget {
   @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
+  Wiontext) {
+    return MaterialApp(dget build(BuildContext c
       title: 'Auth-Firebase',
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: MyHomePage(),
+      home: MyHomePage(),)
     );
   }
 }
